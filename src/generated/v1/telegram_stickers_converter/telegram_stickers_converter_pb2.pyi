@@ -16,6 +16,10 @@ class OutputFormat(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
     OUTPUT_FORMAT_SVG: _ClassVar[OutputFormat]
     OUTPUT_FORMAT_TGS_RAW: _ClassVar[OutputFormat]
     OUTPUT_FORMAT_PNG_SEQUENCE: _ClassVar[OutputFormat]
+    OUTPUT_FORMAT_JPG: _ClassVar[OutputFormat]
+    OUTPUT_FORMAT_MP4: _ClassVar[OutputFormat]
+    OUTPUT_FORMAT_MPEG: _ClassVar[OutputFormat]
+    OUTPUT_FORMAT_MOV: _ClassVar[OutputFormat]
 OUTPUT_FORMAT_UNSPECIFIED: OutputFormat
 OUTPUT_FORMAT_PNG: OutputFormat
 OUTPUT_FORMAT_WEBP_STATIC: OutputFormat
@@ -25,18 +29,26 @@ OUTPUT_FORMAT_WEBM: OutputFormat
 OUTPUT_FORMAT_SVG: OutputFormat
 OUTPUT_FORMAT_TGS_RAW: OutputFormat
 OUTPUT_FORMAT_PNG_SEQUENCE: OutputFormat
+OUTPUT_FORMAT_JPG: OutputFormat
+OUTPUT_FORMAT_MP4: OutputFormat
+OUTPUT_FORMAT_MPEG: OutputFormat
+OUTPUT_FORMAT_MOV: OutputFormat
 
 class GetStickerRequest(_message.Message):
-    __slots__ = ("sticker_file_id", "is_animated", "is_video", "desired_format")
+    __slots__ = ("sticker_file_id", "is_animated", "is_video", "desired_format", "width", "height")
     STICKER_FILE_ID_FIELD_NUMBER: _ClassVar[int]
     IS_ANIMATED_FIELD_NUMBER: _ClassVar[int]
     IS_VIDEO_FIELD_NUMBER: _ClassVar[int]
     DESIRED_FORMAT_FIELD_NUMBER: _ClassVar[int]
+    WIDTH_FIELD_NUMBER: _ClassVar[int]
+    HEIGHT_FIELD_NUMBER: _ClassVar[int]
     sticker_file_id: str
     is_animated: bool
     is_video: bool
     desired_format: OutputFormat
-    def __init__(self, sticker_file_id: _Optional[str] = ..., is_animated: bool = ..., is_video: bool = ..., desired_format: _Optional[_Union[OutputFormat, str]] = ...) -> None: ...
+    width: int
+    height: int
+    def __init__(self, sticker_file_id: _Optional[str] = ..., is_animated: bool = ..., is_video: bool = ..., desired_format: _Optional[_Union[OutputFormat, str]] = ..., width: _Optional[int] = ..., height: _Optional[int] = ...) -> None: ...
 
 class StickerFileMetadata(_message.Message):
     __slots__ = ("input_file_id", "content_type", "actual_format")
