@@ -1,3 +1,11 @@
+import sys
+import os
+
+current_script_dir = os.path.dirname(os.path.abspath(__file__))
+generated_dir_path = os.path.join(current_script_dir, "generated")
+if generated_dir_path not in sys.path:
+    sys.path.insert(0, generated_dir_path)
+
 import asyncio
 import grpc.aio
 
