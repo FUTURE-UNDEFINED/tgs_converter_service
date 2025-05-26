@@ -8,10 +8,10 @@ import grpc
 
 from PIL import Image
 
-from v1.telegram_stickers_converter.telegram_stickers_converter_pb2 import OutputFormat, GetStickerRequest, \
+from generated.telegram_stickers_converter.telegram_stickers_converter_pb2 import OutputFormat, GetStickerRequest, \
     StickerFileMetadata, StickerFileChunk
-from v1.telegram_stickers_converter import telegram_stickers_converter_pb2_grpc
-from bot import bot
+from generated.telegram_stickers_converter import telegram_stickers_converter_pb2_grpc
+from tgs_converter.bot import bot
 from rlottie_python import LottieAnimation
 
 

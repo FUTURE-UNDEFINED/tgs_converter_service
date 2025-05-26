@@ -9,9 +9,8 @@ if generated_dir_path not in sys.path:
 import asyncio
 import grpc.aio
 
-from src.server import TelegramStickersConverterServicer
-from v1.telegram_stickers_converter.telegram_stickers_converter_pb2_grpc import \
-    add_StickerConverterServiceServicer_to_server
+from tgs_converter.server import TelegramStickersConverterServicer
+from generated.telegram_stickers_converter.telegram_stickers_converter_pb2_grpc import add_StickerConverterServiceServicer_to_server
 
 
 async def serve():
@@ -26,5 +25,7 @@ async def serve():
     await server.wait_for_termination()
 
 
-if __name__ == '__main__':
+
+
+def main():
     asyncio.run(serve())
