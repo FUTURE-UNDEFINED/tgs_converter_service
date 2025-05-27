@@ -242,6 +242,7 @@ def output_format_to_str(output_format: OutputFormat) -> str:
 
 class TelegramStickersConverterServicer(telegram_stickers_converter_pb2_grpc.StickerConverterServiceServicer):
     async def GetSticker(self, request: GetStickerRequest, context: grpc.aio.ServicerContext):
+        print("incoming ;)")
         try:
             file_info = await self.__get_file_info(request.sticker_file_id, context)
             byte_array = await file_info.download_as_bytearray()

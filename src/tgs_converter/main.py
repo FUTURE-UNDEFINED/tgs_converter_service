@@ -1,5 +1,6 @@
 import sys
 import os
+from os import environ
 
 current_script_dir = os.path.dirname(os.path.abspath(__file__))
 generated_dir_path = os.path.join(current_script_dir, "generated")
@@ -19,13 +20,12 @@ async def serve():
     add_StickerConverterServiceServicer_to_server(
         TelegramStickersConverterServicer(), server
     )
-    server.add_insecure_port("[::]:5051")
+    grpc_port = environ.get("GRPC_PORT", "50051")
+
+    actual_port = server.add_insecure_port(f"[::]:{grpc_port}")
     await server.start()
-    print("Server started.")
+    print(f"Server started at port {actual_port}.")
     await server.wait_for_termination()
-
-
-
 
 def main():
     asyncio.run(serve())
