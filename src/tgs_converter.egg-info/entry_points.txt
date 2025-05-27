@@ -1,0 +1,2 @@
+[console_scripts]
+tgs-converter = tgs_converter.main:main

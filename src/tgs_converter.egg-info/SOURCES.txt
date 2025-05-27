@@ -1,0 +1,14 @@
+pyproject.toml
+src/generated/telegram_stickers_converter/telegram_stickers_converter_pb2.py
+src/generated/telegram_stickers_converter/telegram_stickers_converter_pb2.pyi
+src/generated/telegram_stickers_converter/telegram_stickers_converter_pb2_grpc.py
+src/tgs_converter/__init__.py
+src/tgs_converter/bot.py
+src/tgs_converter/main.py
+src/tgs_converter/server.py
+src/tgs_converter.egg-info/PKG-INFO
+src/tgs_converter.egg-info/SOURCES.txt
+src/tgs_converter.egg-info/dependency_links.txt
+src/tgs_converter.egg-info/entry_points.txt
+src/tgs_converter.egg-info/requires.txt
+src/tgs_converter.egg-info/top_level.txt
